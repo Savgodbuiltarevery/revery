@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revery: enlightenment for the collective conscience</title>
+<meta name="description" content="Revery is a label, contemporary art, and a blog about becoming more self-aware and mindful of others.">
+<meta property="og:title" content="Revery">
+<meta property="og:description" content="enlightenment for the collective conscience">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#17142b; --dusk:#241d44; --mist:#cfc6f0; --ink:#f4f1ff; --rose:#f2b8d0; --peri:#a99cf0;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);font:400 1.05rem/1.7 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+
+/* header */
+header{position:sticky;top:0;z-index:5;background:rgba(23,20,43,.88);backdrop-filter:blur(8px)}
+header .wrap{display:flex;gap:1rem;align-items:center;justify-content:space-between;padding-top:.9rem;padding-bottom:.9rem;flex-wrap:wrap}
+.logo{font:italic 600 1.6rem var(--serif);text-decoration:none}
+nav{display:flex;gap:1.3rem;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--mist);font-size:.95rem}
+nav a:hover{color:var(--rose)}
+
+/* hero: the one memorable moment */
+.hero{position:relative;overflow:hidden;min-height:78vh;display:grid;place-items:center;text-align:center;padding:5rem 1.5rem}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 18s ease-in-out infinite alternate}
+.o1{width:26rem;height:26rem;background:var(--peri);top:-6rem;left:-5rem}
+.o2{width:22rem;height:22rem;background:var(--rose);bottom:-6rem;right:-4rem;animation-delay:-9s}
+@keyframes drift{to{transform:translate(4rem,3rem) scale(1.15)}}
+.hero-inner{position:relative}
+.hero h1{font:italic 400 clamp(5rem,20vw,13rem)/.9 var(--serif);letter-spacing:-.02em}
+.tag{margin-top:1.5rem;font-size:1.2rem;color:var(--mist)}
+.defn{margin-top:.6rem;font:italic 400 1.1rem var(--serif);color:var(--rose)}
+.btns{margin-top:2rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:.75rem 1.5rem;border-radius:999px;border:1px solid var(--mist);text-decoration:none;background:none;color:var(--ink);font:500 1rem var(--sans);cursor:pointer}
+.btn.main{background:var(--rose);border-color:var(--rose);color:var(--night)}
+.btn:hover{transform:translateY(-2px)}
+
+/* sections */
+section{padding:5rem 0}
+section:nth-of-type(even){background:var(--dusk)}
+h2{font:italic 600 clamp(2.2rem,5vw,3.4rem)/1.1 var(--serif);margin-bottom:1.2rem}
+h3{font:600 1.7rem/1.2 var(--serif);margin-bottom:.4rem}
+.lead{max-width:38rem;color:var(--mist)}
+.grid{display:grid;gap:1.2rem;margin-top:2.2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+
+/* gallery: swap the .ph blocks for <img src="your-photo.jpg" alt="describe it"> */
+.tile{border-radius:1.2rem;overflow:hidden;background:var(--night);border:1px solid rgba(207,198,240,.2)}
+.ph{aspect-ratio:4/5;display:grid;place-items:center;color:var(--night);font:italic 1.2rem var(--serif);text-align:center;padding:1rem}
+.ph.a{background:linear-gradient(160deg,var(--peri),var(--rose))}
+.ph.b{background:linear-gradient(200deg,var(--rose),var(--mist))}
+.ph.c{background:linear-gradient(120deg,var(--mist),var(--peri))}
+.tile p{padding:1rem 1.2rem 1.3rem;color:var(--mist);font-size:.95rem}
+.tile h3{padding:1rem 1.2rem 0}
+
+.card{padding:1.6rem;border-radius:1.2rem;border:1px solid rgba(207,198,240,.25)}
+.card p{color:var(--mist)}
+.posts{margin-top:2rem;display:grid;gap:1rem}
+.post{padding:1.2rem 0;border-top:1px solid rgba(207,198,240,.25)}
+.post time{color:var(--rose);font-size:.9rem}
+
+/* void */
+.void{margin-top:2rem;max-width:34rem}
+textarea{width:100%;min-height:6rem;padding:1rem;border-radius:1rem;border:1px solid var(--mist);background:var(--night);color:var(--ink);font:inherit;resize:vertical}
+#float{min-height:3.5rem;margin-top:1rem;font:italic 1.4rem var(--serif);color:var(--rose)}
+.released{animation:away 3.5s ease-in forwards}
+@keyframes away{to{opacity:0;transform:translateY(-3rem);filter:blur(6px)}}
+
+form.sub{margin-top:1.6rem;display:flex;gap:.7rem;flex-wrap:wrap;max-width:34rem}
+form.sub input{flex:1 1 14rem;padding:.8rem 1.1rem;border-radius:999px;border:1px solid var(--mist);background:var(--night);color:var(--ink);font:inherit}
+
+footer{padding:3rem 0;text-align:center;color:var(--mist);font-size:.95rem}
+footer nav{justify-content:center;margin-bottom:1rem}
+
+@media (prefers-reduced-motion:reduce){.orb,.released{animation:none}.released{opacity:0}.btn:hover{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">revery</a>
+    <nav aria-label="Main">
+      <a href="#about">what is revery?</a>
+      <a href="#gallery">gallery</a>
+      <a href="#creator">meet the creator</a>
+      <a href="#tools">human tools</a>
+      <a href="#void">the void</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="hero-inner">
+      <h1>revery</h1>
+      <p class="tag">enlightenment for the collective conscience</p>
+      <p class="defn">"a pleasant dream or thought"</p>
+      <div class="btns">
+        <a class="btn main" href="#gallery">see the art</a>
+        <a class="btn" href="#join">get the monthly note</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>what is revery?</h2>
+      <p class="lead">Revery is a label, a space for contemporary art, and a blog. The goal is simple: help people slow down, get to know themselves, and pay more attention to the people around them.</p>
+      <p class="lead" style="margin-top:1rem">Every piece starts with a thought worth sitting with. If it makes you pause for a second, it did its job.</p>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2>gallery</h2>
+      <p class="lead">Three collections, and more on the way.</p>
+      <div class="grid">
+        <article class="tile"><div class="ph a">photography<br>(add your photo)</div><h3>photography</h3><p>Moments noticed, not staged.</p></article>
+        <article class="tile"><div class="ph b">self portraits<br>(add your photo)</div><h3>self portraits</h3><p>Looking inward, one frame at a time.</p></article>
+        <article class="tile"><div class="ph c">add your art<br>(add your photo)</div><h3>i just made sum BS</h3><p>Experiments, unfinished ideas, and happy accidents.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="creator">
+    <div class="wrap">
+      <h2>meet the creator</h2>
+      <p class="lead">Write two or three honest sentences here about who you are and why you make art. Your voice is the strongest thing on this page.</p>
+      <h3 style="margin-top:2.5rem">unfiltered reveries</h3>
+      <div class="posts">
+        <div class="post"><time>Add a date</time><h3>Your first post title</h3><p class="lead">A one-line preview of what the post is about.</p></div>
+        <div class="post"><time>Add a date</time><h3>Your second post title</h3><p class="lead">Another short preview to pull readers in.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <div class="wrap">
+      <h2>human tools</h2>
+      <p class="lead">Ways to reflect on yourself. Use them as prompts for thinking, not as predictions.</p>
+      <div class="grid">
+        <div class="card"><h3>natal</h3><p>Your birth chart as a mirror: what themes do you notice in yourself, and what do you want to grow?</p></div>
+        <div class="card"><h3>chakras</h3><p>A body-and-mind check-in. Where are you feeling steady, and where could you use some care?</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="void">
+    <div class="wrap">
+      <h2>the void</h2>
+      <p class="lead">Type something you are ready to let go of, then release it. Nothing is saved or sent anywhere.</p>
+      <div class="void">
+        <label for="thought" class="lead">your thought</label>
+        <textarea id="thought" maxlength="200"></textarea>
+        <div class="btns" style="justify-content:flex-start"><button class="btn main" id="release" type="button">release it</button></div>
+        <p id="float" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <h2>the monthly note</h2>
+      <p class="lead">One short email a month: a new piece, a thought, and a question to carry with you.</p>
+      <!-- Replace YOUR_FORM_ID with a free Formspree (formspree.io) form ID so signups reach your inbox. -->
+      <form class="sub" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="email" class="lead" style="position:absolute;left:-9999px">email address</label>
+        <input id="email" name="email" type="email" placeholder="your email" required>
+        <button class="btn main" type="submit">join</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Social">
+      <a href="https://www.instagram.com/iinvestedinrevery">instagram</a>
+      <a href="https://www.tiktok.com/@iinvestedinrevery">tiktok</a>
+      <a href="https://www.pinterest.com/dollyluvsav/">pinterest</a>
+    </nav>
+    <p>revery (beta). some work may be copyrighted.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('release').addEventListener('click',function(){
+  var box=document.getElementById('thought'), out=document.getElementById('float');
+  var t=box.value.trim();
+  if(!t){out.textContent='Type a thought first.';return;}
+  out.classList.remove('released');
+  out.textContent=t;
+  void out.offsetWidth;
+  out.classList.add('released');
+  box.value='';
+});
+</script>
+</body>
+</html>
